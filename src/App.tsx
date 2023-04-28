@@ -12,11 +12,16 @@ import Button from 'components/button';
 export default function App() {
   const {
     bill,
+    result,
+    canReset,
     selectedTip,
     isCustomTip,
+    peopleNumber,
     handleBillChange,
+    handleResultReset,
     handleCustomTipChange,
     handleSelectedTipChange,
+    handlePeopleNumberChange,
   } = useCalculator();
 
   return (
@@ -53,16 +58,18 @@ export default function App() {
           <Input
             icon={<img src={PersonIcon} alt='person icon' />}
             wrapperClassName='my-2'
-            value={bill}
-            onChange={handleBillChange}
+            value={peopleNumber}
+            onChange={handlePeopleNumberChange}
           />
         </div>
         <Card className='bg-dark-cyan-1 flex flex-col justify-between'>
           <div className='flex flex-col gap-10'>
-            <ViewAmount title='Tip Amount' amount={0} />
-            <ViewAmount title='Total' amount={0} />
+            <ViewAmount title='Tip Amount' amount={result.tipAmount} />
+            <ViewAmount title='Total' amount={result.totalAmount} />
           </div>
-          <Button>Reset</Button>
+          <Button onClick={handleResultReset} disabled={!canReset}>
+            Reset
+          </Button>
         </Card>
       </Card>
     </main>

@@ -24,7 +24,7 @@ export function Input({
   hideErrorText,
   ...props
 }: InputProps) {
-  const [number, setNumber] = useState(Number(value) || 0);
+  const valueNumber = Number(value);
   const [error, setError] = useState(false);
   const [isTouched, setIsTouched] = useState(false);
 
@@ -51,7 +51,10 @@ export function Input({
     'bg-light-cyan-2',
     'text-md',
     'w-full',
-    { 'text-dark-cyan-1': number > 0, 'text-label-color': number === 0 },
+    {
+      'text-dark-cyan-1': (valueNumber || 0) > 0,
+      'text-label-color': valueNumber === 0,
+    },
     'outline-0',
     className
   );
@@ -63,24 +66,23 @@ export function Input({
 
       return;
     }
-    setNumber(numberValue);
     onChange && onChange(numberValue);
   };
 
   const handleBlur: InputProps['onBlur'] = (event) => {
-    if (number <= 0) {
+    if (valueNumber <= 0) {
       setIsTouched(true);
     }
     onBlur && onBlur(event);
   };
 
   useEffect(() => {
-    if (number === 0 && isTouched) {
+    if (valueNumber === 0 && isTouched) {
       setError(true);
     } else {
       setError(false);
     }
-  }, [isTouched, number]);
+  }, [isTouched, valueNumber]);
 
   return (
     <div className={inputWrapperClassNames}>
@@ -93,7 +95,7 @@ export function Input({
       <input
         className={inputClassNames}
         dir='rtl'
-        value={number}
+        value={value}
         onChange={handleChange}
         onBlur={handleBlur}
         {...props}
