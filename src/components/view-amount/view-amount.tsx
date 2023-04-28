@@ -13,7 +13,7 @@ export function ViewAmount({ title, per = 'person', amount }: ViewAmountProps) {
         <p className='text-light-cyan-1 text-base'>{title}</p>
         <span className='text-sm text-dark-cyan-2'>&#47; {per}</span>
       </div>
-      <p className='text-5xl text-primary-color'>
+      <p className='text-3xl screen-sm:text-5xl text-primary-color'>
         {formatDollarCurrency(amount)}
       </p>
     </div>

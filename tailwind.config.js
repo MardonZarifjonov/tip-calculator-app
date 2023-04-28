@@ -19,13 +19,15 @@ export default {
         white: 'hsl(0, 0%, 100%)',
       },
       height: {
-        element: '56px',
+        'element-desktop': '56px',
+        'element-mobile': '42px',
       },
       maxWidth: {
         tip: '120px',
       },
       gridTemplateColumns: {
-        tips: 'repeat(3, minmax(0, 120px))',
+        'tips-desktop': 'repeat(3, minmax(0, 120px))',
+        'tips-mobile': 'repeat(2, minmax(0, 1fr))',
       },
     },
   },

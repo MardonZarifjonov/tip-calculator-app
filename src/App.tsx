@@ -25,8 +25,8 @@ export default function App() {
   } = useCalculator();
 
   return (
-    <main className='w-screen h-screen grid place-items-center'>
-      <Card className='bg-white grid grid-cols-2 gap-10'>
+    <main className='w-screen h-screen grid place-items-end screen-sm:place-items-center'>
+      <Card className='bg-white grid grid-cols-1 screen-sm:grid-cols-2 gap-10'>
         <div>
           <LabelText>Bill</LabelText>
           <Input
@@ -36,7 +36,7 @@ export default function App() {
             onChange={handleBillChange}
           />
           <LabelText className='mb-2'>Select Tip &#37;</LabelText>
-          <div className='grid grid-cols-tips gap-4 mb-8'>
+          <div className='grid grid-cols-tips-mobile screen-sm:grid-cols-tips-desktop gap-4 mb-8'>
             {tips.map((tip) => (
               <CardTip
                 key={tip}
@@ -62,7 +62,7 @@ export default function App() {
             onChange={handlePeopleNumberChange}
           />
         </div>
-        <Card className='bg-dark-cyan-1 flex flex-col justify-between'>
+        <Card className='bg-dark-cyan-1 flex flex-col gap-10 screen-sm:gap-0  screen-sm:justify-between'>
           <div className='flex flex-col gap-10'>
             <ViewAmount title='Tip Amount' amount={result.tipAmount} />
             <ViewAmount title='Total' amount={result.totalAmount} />
