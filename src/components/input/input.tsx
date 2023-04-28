@@ -11,6 +11,7 @@ export type InputProps = Omit<
   icon?: ReactNode;
   wrapperClassName?: string;
   onChange?: (value: number) => void;
+  hideErrorText?: boolean;
 };
 
 export function Input({
@@ -20,6 +21,7 @@ export function Input({
   value,
   onChange,
   onBlur,
+  hideErrorText,
   ...props
 }: InputProps) {
   const [number, setNumber] = useState(Number(value) || 0);
@@ -34,7 +36,6 @@ export function Input({
     'rounded-md',
     'px-4',
     'py-2',
-    'my-2',
     'border-2',
     'transition',
     'relative',
@@ -48,7 +49,7 @@ export function Input({
   const inputClassNames = classNames(
     'bg-light-cyan-2',
     'text-md',
-
+    'w-full',
     { 'text-dark-cyan-1': number > 0, 'text-label-color': number === 0 },
     'outline-0',
     className
@@ -82,8 +83,8 @@ export function Input({
 
   return (
     <div className={inputWrapperClassNames}>
-      <span>{icon}</span>
-      {error && (
+      {icon && <span>{icon}</span>}
+      {error && !hideErrorText && (
         <p className='absolute text-base text-error-color top-[-34px] right-0'>
           Can&apos;t be zero
         </p>
