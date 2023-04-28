@@ -8,3 +8,9 @@ body {
 
   @apply bg-light-cyan-1 text-xl  sm:text-2xl;
 }
+
+input,
+textarea {
+  /* unicode-bidi: bidi-override; */
+  direction: RTL;
+}
