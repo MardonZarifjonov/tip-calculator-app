@@ -18,6 +18,9 @@ export default {
         'error-color': '#FB7272',
         white: 'hsl(0, 0%, 100%)',
       },
+      height: {
+        element: '56px',
+      },
       maxWidth: {
         tip: '120px',
       },

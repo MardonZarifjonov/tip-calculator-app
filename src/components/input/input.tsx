@@ -39,6 +39,7 @@ export function Input({
     'border-2',
     'transition',
     'relative',
+    'h-element',
     {
       'border-error-color': error,
       'focus-within:border-primary-color': !error,

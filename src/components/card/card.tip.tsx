@@ -1,14 +1,20 @@
 import classNames from 'classnames';
+import { CardProps } from './card';
 
-export type CardTipProps = {
+export type CardTipProps = CardProps & {
   percent: number;
+  selected?: boolean;
 };
 
-export function CardTip({ percent }: CardTipProps) {
+export function CardTip({
+  percent,
+  className,
+  selected,
+  ...props
+}: CardTipProps) {
   const cardTipClassNames = classNames(
     'rounded-md',
     'bg-dark-cyan-1',
-    'text-light-cyan-1',
     'grid',
     'place-items-center',
     'py-2',
@@ -16,8 +22,19 @@ export function CardTip({ percent }: CardTipProps) {
     'cursor-pointer',
     'transition',
     'hover:bg-primary-color',
-    'hover:text-dark-cyan-1'
+    'hover:text-dark-cyan-1',
+    'h-element',
+    {
+      'bg-primary-color': selected,
+      'text-light-cyan-1': !selected,
+      'text-dark-cyan-1': selected,
+    },
+    className
   );
 
-  return <div className={cardTipClassNames}>{percent}&#37;</div>;
+  return (
+    <div className={cardTipClassNames} {...props}>
+      {percent}&#37;
+    </div>
+  );
 }
