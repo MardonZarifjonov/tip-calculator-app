@@ -47,7 +47,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### Links
 
 - Solution URL: [Source code](https://github.com/MardonZarifjonov/tip-calculator-app)
-- Live Site URL: [Deployed app](https://your-live-site-url.com)
+- Live Site URL: [Deployed app](https://tip-calculator-app-mu-coral.vercel.app/)
 
 ## My process
 
