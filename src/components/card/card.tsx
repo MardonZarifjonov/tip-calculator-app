@@ -6,7 +6,7 @@ export type CardProps = React.DetailedHTMLProps<
 >;
 
 export function Card({ children, className }: CardProps) {
-  const cardClassName = classNames('rounded-xl', 'p-8', className);
+  const cardClassName = classNames('rounded-3xl', 'p-7', className);
 
   return <div className={cardClassName}>{children}</div>;
 }

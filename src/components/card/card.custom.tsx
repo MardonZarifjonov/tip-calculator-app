@@ -15,11 +15,11 @@ export function CardCustom({
     'rounded-md',
     'grid',
     'place-items-center',
-    'screen-sm:max-w-tip',
+    'sm:max-w-tip',
     'cursor-pointer',
     'transition',
     'bg-light-cyan-2',
-    'h-element-mobile screen-sm:h-element-desktop',
+    'h-element-mobile sm:h-element-desktop',
     className
   );
 

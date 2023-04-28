@@ -39,7 +39,7 @@ export function Input({
     'border-2',
     'transition',
     'relative',
-    'h-element-mobile screen-sm:h-element-desktop',
+    'h-element-mobile sm:h-element-desktop',
     {
       'border-error-color': error,
       'focus-within:border-primary-color': !error,
