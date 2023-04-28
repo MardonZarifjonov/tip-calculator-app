@@ -25,9 +25,8 @@ export function CardTip({
     'hover:text-dark-cyan-1',
     'h-element',
     {
-      'bg-primary-color': selected,
+      'bg-primary-color text-dark-cyan-1': selected,
       'text-light-cyan-1': !selected,
-      'text-dark-cyan-1': selected,
     },
     className
   );
